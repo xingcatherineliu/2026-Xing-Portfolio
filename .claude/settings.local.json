@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:5173/)",
+      "Bash(cat ~/.claude/settings.json 2>/dev/null | grep -i figma || echo \"No figma MCP found in settings.json\")",
+      "Read(//Users/xingliu/.claude/**)",
+      "Bash(cat ~/.claude/settings.local.json 2>/dev/null | grep -i figma || echo \"No figma MCP found in settings.local.json\")",
+      "mcp__claude_ai_Figma__whoami",
+      "mcp__claude_ai_Figma__create_new_file",
+      "mcp__claude_ai_Figma__use_figma",
+      "mcp__claude_ai_Figma__get_screenshot",
+      "Bash(npx tsc *)"
+    ]
+  }
+}

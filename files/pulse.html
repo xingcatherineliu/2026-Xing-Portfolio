@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulse — Xing Liu</title>
+<meta name="description" content="Case study: an alerting console on-call engineers actually want open at 2am.">
+<meta property="og:title" content="Pulse — Case study by Xing Liu">
+<meta property="og:description" content="An alerting console for on-call engineers. Alert grammar, escalation flows, and a calm dark theme. 4.7★ in-app.">
+<meta property="og:type" content="article">
+<meta name="theme-color" content="#f7f6f3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    background: #f7f6f3;
+    color: #0a0a0a;
+  }
+  ::selection { background: #4caf50; color: #fff; }
+  a { color: inherit; }
+  a, button { transition: color .15s ease, background .15s ease, opacity .15s ease, transform .15s ease; }
+
+  .page { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1); }
+  .reveal.is-in { opacity: 1; transform: none; }
+
+  .back-link { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; padding: 6px 10px 6px 0; border-radius: 8px; }
+  .back-link:hover { transform: translateX(-2px); }
+
+  @media (max-width: 880px) {
+    .grid-2 { grid-template-columns: 1fr !important; }
+    .grid-3 { grid-template-columns: 1fr !important; }
+    .grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+    .hero-h1 { font-size: 56px !important; }
+    .section-h2 { font-size: 36px !important; }
+    .responsive-hide { display: none !important; }
+  }
+
+  .splash {
+    position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+    background: #f7f6f3; z-index: 9999;
+    font-family: 'DM Sans', system-ui, sans-serif; color: #6b6b6b;
+    transition: opacity .4s ease;
+  }
+  .splash.hide { opacity: 0; pointer-events: none; }
+  .splash-dot { width: 12px; height: 12px; border-radius: 50%; background: #4caf50; margin-right: 12px;
+    animation: pulse 1.4s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1 } 50% { transform: scale(.6); opacity: .5 } }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="splash" id="splash"><span class="splash-dot"></span>Loading…</div>
+<div id="root"></div>
+<script>window.CASE = 'pulse.html';</script>
+<script type="text/babel" src="shared.jsx"></script>
+<script type="text/babel" src="case-study-compass.jsx"></script>
+<script type="text/babel">
+  setTimeout(() => {
+    const s = document.getElementById('splash');
+    if (s) { s.classList.add('hide'); setTimeout(() => s.remove(), 400); }
+  }, 200);
+</script>
+</body>
+</html>

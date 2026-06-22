@@ -1,0 +1,161 @@
+/* ─── Design tokens ─── */
+:root {
+  --bg:         #f7f6f3;
+  --paper:      #ffffff;
+  --panel:      #eef0eb;
+  --panel2:     #f0eee9;
+  --ink:        #0a0a0a;
+  --ink2:       #2a2a2a;
+  --muted:      #6b6b6b;
+  --rule:       rgba(10, 10, 10, 0.12);
+  --rule-soft:  rgba(10, 10, 10, 0.06);
+  --footer-bg:  #0a0a0a;
+  --footer-ink: #f5f5f0;
+  --accent:     #4caf50;
+  --sans:       "DM Sans", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --mono:       "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* ─── Reset ─── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove default margins */
+h1, h2, h3, h4, h5, h6, p, blockquote, ul, ol { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+img, video { max-width: 100%; display: block; }
+a { color: inherit; }
+button { font-family: inherit; cursor: pointer; }
+
+/* ─── Layout ─── */
+.page-container,
+.page {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ─── Reveal animation ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ─── Nav links ─── */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 18px;
+  right: 18px;
+  height: 1.5px;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-link:hover::after,
+.nav-link.is-active::after {
+  transform: scaleX(1);
+}
+
+/* ─── Typography scale ─── */
+.hero-h1 {
+  font-size: 104px;
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+
+.section-h2 {
+  font-family: var(--sans);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+@media (max-width: 900px) {
+  .hero-h1  { font-size: 64px; }
+  .section-h2 { font-size: 36px !important; }
+}
+
+/* ─── Work card ─── */
+.work-card {
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+.work-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(10, 10, 10, 0.08);
+}
+
+/* ─── Read / CTA button ─── */
+.read-btn {
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.read-btn:hover {
+  opacity: 0.88;
+}
+.work-card:hover .read-btn .arrow {
+  transform: translateX(4px);
+}
+.arrow {
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+/* ─── Responsive helpers ─── */
+@media (max-width: 900px) {
+  .responsive-hide { display: none !important; }
+
+  .responsive-hero,
+  .responsive-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .grid-2 { grid-template-columns: 1fr !important; }
+  .grid-3 { grid-template-columns: 1fr !important; }
+  .grid-4 { grid-template-columns: 1fr 1fr !important; }
+}
+
+@media (max-width: 600px) {
+  .grid-4 { grid-template-columns: 1fr !important; }
+}
+
+/* ─── Print styles (Resume PDF) ─── */
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; color: black; }
+  .reveal { opacity: 1; transform: none; }
+}
