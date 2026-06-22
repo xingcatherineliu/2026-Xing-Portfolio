@@ -10,6 +10,7 @@ function Hero() {
   return (
     <section
       id="top"
+      className="hero-section"
       style={{
         position: 'relative',
         padding: '80px 32px 120px',
@@ -111,6 +112,7 @@ function WorkBody({ project }: { project: Project }) {
         </div>
 
         <h3
+          className="work-card-title"
           style={{
             fontFamily: 'var(--sans)',
             fontWeight: 600,
@@ -282,7 +284,7 @@ function WorkCard({ project, index }: { project: Project; index: number }) {
 
 function WorkList() {
   return (
-    <section id="work" style={{ padding: '96px 32px 56px' }}>
+    <section id="work" className="work-list-section" style={{ padding: '96px 32px 56px' }}>
       <div className="page-container">
         <Reveal>
           <div

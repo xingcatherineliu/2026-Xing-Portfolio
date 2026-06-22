@@ -184,6 +184,7 @@ function MetaBar({ c }: { c: CaseStudy }) {
             {rows.map(([k, v], i) => (
               <div
                 key={k}
+                className="meta-cell"
                 style={{
                   padding: '24px 20px',
                   borderRight: i < rows.length - 1 ? '1px solid var(--rule)' : 'none',
@@ -323,6 +324,7 @@ function Pullquote({ c }: { c: CaseStudy }) {
             }}
           >
             <p
+              className="pullquote-text"
               style={{
                 fontFamily: 'var(--sans)',
                 fontWeight: 500,

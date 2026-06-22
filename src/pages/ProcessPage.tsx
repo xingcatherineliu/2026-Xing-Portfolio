@@ -35,6 +35,7 @@ export default function ProcessPage() {
           {PROCESS.map((p, i) => (
             <Reveal key={p.n} delay={i * 80}>
               <div
+                className="process-col"
                 style={{
                   padding: '32px 28px 36px',
                   borderRight: i < 3 ? '1px solid var(--rule)' : 'none',

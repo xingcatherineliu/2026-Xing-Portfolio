@@ -153,6 +153,80 @@ button { font-family: inherit; cursor: pointer; }
   .grid-4 { grid-template-columns: 1fr !important; }
 }
 
+/* ─── Mobile nav ─── */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--ink);
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.is-open span:nth-child(2) { opacity: 0; }
+.hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  padding: 8px 24px 20px;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--rule);
+}
+.mobile-menu.is-open { display: flex; }
+
+/* ─── Mobile breakpoints ─── */
+@media (max-width: 580px) {
+  .hamburger { display: flex; }
+  .nav-desktop-links { display: none !important; }
+}
+
+@media (max-width: 768px) {
+  .hero-h1 { font-size: 54px !important; }
+  .section-h2 { font-size: 40px !important; }
+  .work-card-title { font-size: 36px !important; }
+  .about-h2 { font-size: 46px !important; }
+  .pullquote-text { font-size: 28px !important; }
+}
+
+@media (max-width: 900px) {
+  .process-col:nth-child(2n) { border-right: none !important; }
+}
+
+@media (max-width: 600px) {
+  .process-col {
+    border-right: none !important;
+    border-top: 1px solid var(--rule);
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .process-col:first-child { border-top: none !important; }
+  .meta-cell { border-right: none !important; border-top: 1px solid var(--rule); }
+  .meta-cell:first-child { border-top: none !important; }
+}
+
+@media (max-width: 480px) {
+  .hero-h1 { font-size: 40px !important; }
+  .section-h2 { font-size: 32px !important; }
+  .work-card-title { font-size: 28px !important; }
+  .about-h2 { font-size: 34px !important; }
+  .pullquote-text { font-size: 22px !important; }
+}
+
 /* ─── Print styles (Resume PDF) ─── */
 @media print {
   .no-print { display: none !important; }

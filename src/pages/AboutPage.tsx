@@ -16,7 +16,7 @@ export default function AboutPage() {
           <Reveal>
             <div>
               <h2
-                className="section-h2"
+                className="section-h2 about-h2"
                 style={{
                   fontFamily: 'var(--sans)',
                   fontSize: 64,
