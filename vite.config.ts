@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react'
 // or keep '/' for a custom domain or <username>.github.io root repo.
 export default defineConfig({
   plugins: [react()],
-  base: '/',
+  base: '/2026-Xing-Portfolio/',
 })
