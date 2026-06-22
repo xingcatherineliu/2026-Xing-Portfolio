@@ -286,30 +286,6 @@ function WorkList() {
   return (
     <section id="work" className="work-list-section" style={{ padding: '96px 32px 56px' }}>
       <div className="page-container">
-        <Reveal>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'baseline',
-              justifyContent: 'space-between',
-              borderBottom: '1px solid var(--ink)',
-              paddingBottom: 20,
-              marginBottom: 40,
-            }}
-          >
-            <h2
-              className="section-h2"
-              style={{ fontFamily: 'var(--sans)', fontSize: 56, margin: 0, color: 'var(--ink)' }}
-            >
-              Selected work
-            </h2>
-            <div style={{ fontFamily: 'var(--sans)', fontSize: 13, color: 'var(--muted)', display: 'flex', gap: 24 }}>
-              <span>4 projects</span>
-              <span>2022 — 2025</span>
-            </div>
-          </div>
-        </Reveal>
-
         <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
           {PROJECTS.map((p, i) => (
             <Reveal key={p.code} delay={i * 60}>

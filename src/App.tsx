@@ -6,6 +6,7 @@ import AboutPage from './pages/AboutPage'
 import ProcessPage from './pages/ProcessPage'
 import ResumePage from './pages/ResumePage'
 import CaseStudyPage from './pages/CaseStudyPage'
+import DesignSystemCaseStudyPage from './pages/DesignSystemCaseStudyPage'
 import PasswordGate from './components/PasswordGate'
 
 function Layout({ children, showFooter = true }: { children: React.ReactNode; showFooter?: boolean }) {
@@ -55,6 +56,16 @@ export default function App() {
           }
         />
         {/* Case studies use their own footer */}
+        <Route
+          path="/work/widgets"
+          element={
+            <Layout showFooter={false}>
+              <PasswordGate>
+                <DesignSystemCaseStudyPage />
+              </PasswordGate>
+            </Layout>
+          }
+        />
         <Route
           path="/work/:slug"
           element={
