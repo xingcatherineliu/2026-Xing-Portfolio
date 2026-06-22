@@ -6,6 +6,7 @@ import AboutPage from './pages/AboutPage'
 import ProcessPage from './pages/ProcessPage'
 import ResumePage from './pages/ResumePage'
 import CaseStudyPage from './pages/CaseStudyPage'
+import PasswordGate from './components/PasswordGate'
 
 function Layout({ children, showFooter = true }: { children: React.ReactNode; showFooter?: boolean }) {
   return (
@@ -58,7 +59,9 @@ export default function App() {
           path="/work/:slug"
           element={
             <Layout showFooter={false}>
-              <CaseStudyPage />
+              <PasswordGate>
+                <CaseStudyPage />
+              </PasswordGate>
             </Layout>
           }
         />
