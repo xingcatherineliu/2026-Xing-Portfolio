@@ -1,12 +1,35 @@
 import Reveal from '../components/Reveal'
-import Label from '../components/Label'
 import { ABOUT } from '../data/content'
 
 export default function AboutPage() {
   return (
     <section id="about" style={{ padding: '64px 32px 96px' }}>
       <div className="page-container">
-        <Label as="div" style={{ display: 'block', marginBottom: 32 }}>About</Label>
+        <Reveal>
+          <div
+            style={{
+              borderBottom: '1px solid var(--ink)',
+              paddingBottom: 24,
+              marginBottom: 56,
+            }}
+          >
+            <h2
+              className="section-h2"
+              style={{
+                fontFamily: 'var(--sans)',
+                fontSize: 56,
+                margin: '0 0 10px',
+                color: 'var(--ink)',
+              }}
+            >
+              Xing Liu{' '}
+              <span style={{ color: 'var(--muted)' }}>— Senior Product Designer</span>
+            </h2>
+            <div style={{ fontFamily: 'var(--sans)', fontSize: 16, color: 'var(--muted)' }}>
+              Designer + Builder · New York + New Jersey
+            </div>
+          </div>
+        </Reveal>
 
         <div
           className="responsive-grid"
@@ -26,8 +49,8 @@ export default function AboutPage() {
                   letterSpacing: '-0.035em',
                 }}
               >
-                Half designer,<br />half engineer<span style={{ color: 'var(--accent)' }}>,</span><br />
-                <span style={{ color: 'var(--muted)' }}>full collaborator.</span>
+                I think in products,<br />design in systems<span style={{ color: 'var(--accent)' }}>,</span><br />
+                <span style={{ color: 'var(--muted)' }}>and prototype in code.</span>
               </h2>
 
               <p
@@ -36,16 +59,38 @@ export default function AboutPage() {
                   fontSize: 18,
                   lineHeight: 1.55,
                   color: 'var(--ink2)',
-                  margin: '0 0 24px',
+                  margin: '0 0 28px',
                   maxWidth: 620,
                 }}
               >
                 {ABOUT.bio}
               </p>
+
+              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 28px', display: 'flex', flexDirection: 'column', gap: 12 }}>
+                {ABOUT.bullets.map((b, i) => (
+                  <li
+                    key={i}
+                    style={{
+                      display: 'flex',
+                      gap: 12,
+                      alignItems: 'flex-start',
+                      fontFamily: 'var(--sans)',
+                      fontSize: 15,
+                      lineHeight: 1.6,
+                      color: 'var(--ink2)',
+                      maxWidth: 620,
+                    }}
+                  >
+                    <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1 }}>—</span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+
               <p
                 style={{
                   fontFamily: 'var(--sans)',
-                  fontSize: 16,
+                  fontSize: 15,
                   lineHeight: 1.6,
                   color: 'var(--muted)',
                   margin: 0,

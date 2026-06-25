@@ -4,9 +4,8 @@ import { CONTACT } from '../data/content'
 
 const NAV_LINKS = [
   { to: '/', label: 'Work', end: true },
-  { to: '/about', label: 'About', end: false },
   { to: '/process', label: 'Process', end: false },
-  { to: '/resume', label: 'Resume', end: false },
+  { to: '/about', label: 'About', end: false },
 ]
 
 const LinkedInIcon = () => (

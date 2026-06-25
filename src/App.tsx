@@ -4,7 +4,6 @@ import SiteFooter from './components/SiteFooter'
 import WorkPage from './pages/WorkPage'
 import AboutPage from './pages/AboutPage'
 import ProcessPage from './pages/ProcessPage'
-import ResumePage from './pages/ResumePage'
 import CaseStudyPage from './pages/CaseStudyPage'
 import DesignSystemCaseStudyPage from './pages/DesignSystemCaseStudyPage'
 import PasswordGate from './components/PasswordGate'
@@ -44,14 +43,6 @@ export default function App() {
           element={
             <Layout>
               <ProcessPage />
-            </Layout>
-          }
-        />
-        <Route
-          path="/resume"
-          element={
-            <Layout>
-              <ResumePage />
             </Layout>
           }
         />

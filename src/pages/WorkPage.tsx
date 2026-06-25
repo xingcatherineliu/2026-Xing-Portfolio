@@ -238,7 +238,7 @@ function WorkBody({ project }: { project: Project }) {
 }
 
 function WorkCard({ project, index }: { project: Project; index: number }) {
-  const isWide = index === 0 || index === 3 || index === 5
+  const isWide = index % 2 === 0
   const bg = CARD_BGS[index]
 
   return (

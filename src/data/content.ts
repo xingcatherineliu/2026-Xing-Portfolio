@@ -22,8 +22,15 @@ export const PROCESS = [
 ]
 
 export const ABOUT = {
-  bio: "I'm a senior product designer with eight years across fintech, infra, and data tools. I design and build — most weeks involve both Figma and a code editor. I care most about complex, ambient products that people use for hours: the kind where small frictions compound, and small clarities do too.",
-  current: 'Currently exploring my next role — open to anything where craft matters and the problem is honestly interesting.',
+  bio: "I'm a senior product designer and former frontend engineer with 10+ years across fintech, data platforms, and enterprise tools. I work at the intersection of product, design, and engineering — and I'm most useful when the problem isn't fully defined yet.",
+  bullets: [
+    'Work and design in ambiguity — I join projects before the answer is clear and help shape what gets built, not just how it looks.',
+    'Embedded with engineering from day one — my frontend background means I speak the language, get into technical constraints early, and ship closer to the edge of what\'s possible.',
+    'Co-develop requirements with product owners — not a consumer of the spec, but a contributor to it from the start.',
+    'Prototype in code as often as Figma — and these days, vibe coding with AI to compress the gap between idea and working interaction.',
+    'Thrive in cross-functional teams — I\'ve spent my career as the connective tissue between design, product, and engineering.',
+  ],
+  current: 'Based in New York + New Jersey. Open to senior IC roles.',
   skills: [
     {
       g: 'Design',
