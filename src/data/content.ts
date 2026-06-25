@@ -38,7 +38,7 @@ export const ABOUT = {
     },
     {
       g: 'Build',
-      items: ['React + TypeScript', 'Tailwind / styled', 'Figma plugins', 'D3 / Observable Plot', 'Prototyping'],
+      items: ['React + TypeScript', 'Tailwind / styled', 'D3 / Observable Plot', 'Claude Code', 'Copilot'],
     },
     {
       g: 'Working with',
