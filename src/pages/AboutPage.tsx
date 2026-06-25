@@ -87,18 +87,6 @@ export default function AboutPage() {
                 ))}
               </ul>
 
-              <p
-                style={{
-                  fontFamily: 'var(--sans)',
-                  fontSize: 15,
-                  lineHeight: 1.6,
-                  color: 'var(--muted)',
-                  margin: 0,
-                  maxWidth: 620,
-                }}
-              >
-                {ABOUT.current}
-              </p>
             </div>
           </Reveal>
 
